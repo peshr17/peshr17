@@ -18,7 +18,7 @@ jobs:
 
       run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/... -OutFile ngrok.zip
 
-      - name: Extract
+    - name: Extract
 
       run: Expand-Archive ngrok.zip
 
@@ -30,7 +30,7 @@ jobs:
 
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
 
-    - name: Enable TS
+        - name: Enable TS
 
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
 
